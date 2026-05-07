@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>How to actually make a strong password (and why most advice is wrong) | howtoit</title>
+<meta name="keywords" content="passwords, authentication, fundamentals">
+<meta name="description" content="Most password advice focuses on complexity rules that don&#39;t work. Here&#39;s what actually makes a password hard to crack.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/password-strength/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a1a1b118b3e83435265dc39da18e54244bcc0e5481d1d034aadc0c899c51e15c.css" integrity="sha256-oaGxGLPoNDUmXcOdoY5UJEvMDlSB0dA0qtwMiZxR4Vw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/password-strength/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="howtoit (Alt + H)">howtoit</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      How to actually make a strong password (and why most advice is wrong)
+    </h1>
+    <div class="post-description">
+      Most password advice focuses on complexity rules that don&#39;t work. Here&#39;s what actually makes a password hard to crack.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-05-07 00:00:00 +0000 UTC'>May 7, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>Most people have been taught the same password advice: use uppercase letters, numbers, and symbols. Make it at least 8 characters. Change it every 90 days.</p>
+<p>Almost all of that is wrong, or at least badly incomplete. This post breaks down what actually determines password strength, how attackers approach cracking, and what you should actually do.</p>
+<h2 id="what-password-strength-really-means">What &ldquo;password strength&rdquo; really means<a hidden class="anchor" aria-hidden="true" href="#what-password-strength-really-means">#</a></h2>
+<p>A password is strong if it takes an attacker an impractical amount of time to guess it. That&rsquo;s it. Strength isn&rsquo;t about how complicated it looks — it&rsquo;s about how long an exhaustive search takes.</p>
+<p>That time depends on two things:</p>
+<ul>
+<li><strong>Entropy</strong> — how many possible passwords exist in the space you&rsquo;re drawing from</li>
+<li><strong>Cracking speed</strong> — how many guesses per second an attacker can make</li>
+</ul>
+<p>If an attacker can make 10 billion guesses per second (realistic with a modern GPU and a leaked hash), a truly random 8-character password using letters, numbers, and symbols has about 6.6 quadrillion combinations — which sounds like a lot until you realise it falls in under 8 days of continuous cracking.</p>
+<h2 id="how-attackers-actually-crack-passwords">How attackers actually crack passwords<a hidden class="anchor" aria-hidden="true" href="#how-attackers-actually-crack-passwords">#</a></h2>
+<p>Understanding the attack shapes the defence. Attackers rarely brute-force every possible combination from scratch. Instead they work in layers:</p>
+<h3 id="1-leaked-database-lookups">1. Leaked database lookups<a hidden class="anchor" aria-hidden="true" href="#1-leaked-database-lookups">#</a></h3>
+<p>The first thing any serious attacker does is check if your password hash matches one in a breach database. Sites like Have I Been Pwned index billions of leaked credentials. If you&rsquo;ve reused a password that appeared in any previous breach, it&rsquo;s already known — complexity doesn&rsquo;t matter.</p>
+<h3 id="2-dictionary-attacks">2. Dictionary attacks<a hidden class="anchor" aria-hidden="true" href="#2-dictionary-attacks">#</a></h3>
+<p>Attackers use wordlists — the 10 million most common passwords, every word in the English dictionary, common names, sports teams, keyboard walks (<code>qwerty</code>, <code>123456</code>). Tools like Hashcat can run through these at enormous speed.</p>
+<h3 id="3-rule-based-attacks">3. Rule-based attacks<a hidden class="anchor" aria-hidden="true" href="#3-rule-based-attacks">#</a></h3>
+<p>This is where &ldquo;add a number and symbol&rdquo; advice falls apart. Attackers know that humans follow predictable patterns when told to add complexity:</p>
+<ul>
+<li><code>password</code> → <code>Password1!</code></li>
+<li><code>liverpool</code> → <code>L1verpool!</code></li>
+<li><code>sarah</code> → <code>Sarah1990!</code></li>
+</ul>
+<p>Hashcat has thousands of built-in rules that apply exactly these transformations automatically. If your password started as a word and you &ldquo;complexified&rdquo; it, it&rsquo;s vulnerable.</p>
+<h3 id="4-mask-attacks">4. Mask attacks<a hidden class="anchor" aria-hidden="true" href="#4-mask-attacks">#</a></h3>
+<p>Attackers model password structure. They know that most 8-character passwords follow patterns like <code>Xxxxxxx1</code> (capital first letter, lowercase body, number at end). Mask attacks enumerate only passwords matching likely structures, dramatically reducing the search space.</p>
+<h2 id="what-actually-makes-a-password-strong">What actually makes a password strong<a hidden class="anchor" aria-hidden="true" href="#what-actually-makes-a-password-strong">#</a></h2>
+<h3 id="length-beats-complexity">Length beats complexity<a hidden class="anchor" aria-hidden="true" href="#length-beats-complexity">#</a></h3>
+<p>Entropy scales dramatically with length. Every additional character multiplies the search space by the size of your character set. A 20-character lowercase-only passphrase is exponentially harder to crack than an 8-character password full of symbols.</p>
+<p>Compare:</p>
+<ul>
+<li><code>P@ssw0rd!</code> — 9 characters, looks complex, cracks in seconds because it&rsquo;s a known pattern</li>
+<li><code>correct horse battery staple</code> — 4 random common words, 28 characters, would take longer than the age of the universe to brute-force</li>
+</ul>
+<p>This is why NIST (the US National Institute of Standards and Technology) updated its guidelines in 2017 to recommend length and randomness over forced complexity rules.</p>
+<h3 id="randomness-matters-more-than-you-think">Randomness matters more than you think<a hidden class="anchor" aria-hidden="true" href="#randomness-matters-more-than-you-think">#</a></h3>
+<p>The problem with human-chosen passphrases is that humans are bad at random. We pick words that mean something to us, we use cultural references, we reach for the same handful of &ldquo;random&rdquo; words. Attackers know this and build wordlists accordingly.</p>
+<p>True randomness means using a source of entropy that has no connection to you. A password manager generating a random string, or the Diceware method (literally rolling dice to pick from a wordlist), gives you genuine randomness.</p>
+<h3 id="uniqueness-across-sites">Uniqueness across sites<a hidden class="anchor" aria-hidden="true" href="#uniqueness-across-sites">#</a></h3>
+<p>A strong password used on multiple sites is a weak password. When one site is breached and your credentials are dumped, every other site where you use that password becomes compromised. Credential stuffing — automatically trying leaked username/password pairs across other sites — is one of the most common attack vectors today.</p>
+<h2 id="practical-recommendations">Practical recommendations<a hidden class="anchor" aria-hidden="true" href="#practical-recommendations">#</a></h2>
+<p><strong>Use a password manager.</strong> This is the single highest-impact change most people can make. Bitwarden (open source, free), 1Password, and KeePassXC are all solid options. Let it generate and store a unique random password for every site. You only need to remember one strong master password.</p>
+<p><strong>For your master password, use Diceware.</strong> Roll five or six dice, look up each result in the <a href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt">EFF Diceware wordlist</a>, and concatenate the words. This gives you a genuinely random passphrase that&rsquo;s both memorable and has high entropy.</p>
+<p><strong>Enable MFA everywhere it&rsquo;s offered.</strong> A strong password and MFA together mean an attacker needs both your password <em>and</em> physical access to your second factor. TOTP apps (Aegis on Android, Raivo on iOS) are better than SMS codes, which are vulnerable to SIM swapping.</p>
+<p><strong>Check Have I Been Pwned.</strong> Visit <a href="https://haveibeenpwned.com">haveibeenpwned.com</a> and check your email address. If any of your accounts have appeared in a breach, rotate those passwords immediately.</p>
+<p><strong>Stop changing passwords on a schedule.</strong> NIST explicitly recommends against forced periodic rotation unless there&rsquo;s evidence of compromise. Frequent rotation encourages weaker passwords because people struggle to remember new ones. Change passwords when there&rsquo;s a reason to, not on a calendar.</p>
+<h2 id="the-underlying-principle">The underlying principle<a hidden class="anchor" aria-hidden="true" href="#the-underlying-principle">#</a></h2>
+<p>Password strength is about the cost of exhaustive search. Make that cost high by using long, random, unique passwords — and remove the human predictability that rule-based attacks exploit. A password manager does most of this work for you automatically.</p>
+<p>The goal isn&rsquo;t a password that <em>looks</em> strong. It&rsquo;s one that genuinely is.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/passwords/">Passwords</a></li>
+      <li><a href="http://localhost:1313/tags/authentication/">Authentication</a></li>
+      <li><a href="http://localhost:1313/tags/fundamentals/">Fundamentals</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">howtoit</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

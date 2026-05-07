@@ -1,0 +1,23 @@
+baseURL = "https://howtoit.org/"
+title   = "howtoit"
+theme   = "PaperMod"
+
+[params]
+  profileMode.enabled = false
+  defaultTheme = "auto"
+  [params.homeInfoParams]
+    Title  = "howtoit.org"
+    Content = "Practical cybersecurity & IT, explained."
+
+  [[params.socialIcons]]
+    name = "github"
+    url  = "https://github.com/Dannypxp"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url  = "https://linkedin.com/in/daniel-vivar-9b3b37303/"
+
+  [[menu.main]]
+    name = "About"
+    url  = "/about/"
+    weight = 10

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on howtoit</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on howtoit</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to actually make a strong password (and why most advice is wrong)</title>
+      <link>http://localhost:1313/posts/password-strength/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/password-strength/</guid>
+      <description>Most password advice focuses on complexity rules that don&amp;#39;t work. Here&amp;#39;s what actually makes a password hard to crack.</description>
+    </item>
+  </channel>
+</rss>

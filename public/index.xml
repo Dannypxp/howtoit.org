@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>howtoit</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on howtoit</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to actually make a strong password (and why most advice is wrong)</title>
+      <link>http://localhost:1313/posts/password-strength/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/password-strength/</guid>
+      <description>Most password advice focuses on complexity rules that don&amp;#39;t work. Here&amp;#39;s what actually makes a password hard to crack.</description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;hey-im-daniel&#34;&gt;Hey, I&amp;rsquo;m Daniel&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m a cybersecurity analyst based in Winston-Salem, NC. I graduated from UNC Pembroke in December 2025 with a BS in Computer Science (Cybersecurity concentration) and hold CompTIA Security+ and CySA+ certifications.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m not a purely academic candidate. Last summer I interned at North Carolina&amp;rsquo;s Electric Cooperatives — a NERC CIP-regulated utility — where I worked on real security operations: monitoring SIEM alerts via CrowdStrike Falcon and ArcticWolf MDR, deploying Tenable Nessus across the fleet, co-authoring security policies, and responding to an active Tycoon2FA phishing campaign that targeted employees. That response involved pulling affected users from SIEM, reverse-engineering the obfuscated HTML payload, tracking how the attack evolved across multiple waves, and recommending full containment — laptop disposal, account deletion, and rotating the company&amp;rsquo;s email format to block the attacker from re-targeting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
