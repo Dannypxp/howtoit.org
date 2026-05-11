@@ -64,4 +64,4 @@ I'm actively looking for SOC Analyst and Security Analyst roles — remote or in
 
 - **LinkedIn:** [linkedin.com/in/daniel-vivar-9b3b37303](https://linkedin.com/in/daniel-vivar-9b3b37303)
 - **GitHub:** [github.com/Dannypxp](https://github.com/Dannypxp)
-- **Email:** vivar6@icloud.com
+- **Email:** lasers-scone.2d@icloud.com (Hidden Email pointing to my private email, so my private isnt floating around :p)
