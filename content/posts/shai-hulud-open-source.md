@@ -1,6 +1,6 @@
 +++
 title       = "TeamPCP published their own malware on GitHub — with an instruction manual"
-date        = 2026-05-21
+date        = 2026-05-29
 draft       = false
 tags        = ["threat intelligence", "supply chain", "malware", "github", "open source"]
 description = "On May 12, TeamPCP posted the full source code for the Shai-Hulud worm to GitHub under the MIT license. Copycat actors were forking it within hours. Here's what happened and what it means."
