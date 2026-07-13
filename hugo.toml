@@ -2,6 +2,8 @@ baseURL = "https://howtoit.org/"
 title   = "howtoit"
 theme   = "PaperMod"
 
+googleAnalytics = "G-GHBG4K50PH"
+
 [params]
   profileMode.enabled = false
   defaultTheme        = "auto"
